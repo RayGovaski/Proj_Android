@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CatNap</string>
+    <string name="text_cadastro">Cadastre-se aqui</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="pergunta_conta">Não possui uma conta?</string>
+    <string name="senha_hint">Inserir senha</string>
+    <string name="senha_title">Senha:</string>
+    <string name="email_title">Email:</string>
+    <string name="email_hint">email.exemplo@dominio.com</string>
+    <string name="login_title">Login</string>
+</resources>

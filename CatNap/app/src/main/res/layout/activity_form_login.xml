@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".FormLogin">
+
+    <TextView
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Email"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <TextView
+        android:id="@+id/Email"
+        style="@style/Textos"
+        android:text="@string/email_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Login"
+        app:layout_constraintBottom_toTopOf="@id/Insert_email"
+        />
+
+    <EditText
+        android:id="@+id/Insert_email"
+        style="@style/Textos"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Senha"
+        />
+
+    <TextView
+        android:id="@+id/Senha"
+        style="@style/Textos"
+        android:text="@string/senha_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Insert_email"
+        app:layout_constraintBottom_toTopOf="@id/Insert_senha"
+        />
+
+    <EditText
+        android:id="@+id/Insert_senha"
+        style="@style/Textos"
+        android:hint="@string/senha_hint"
+        android:inputType="textPassword"
+        android:textColorHint="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Senha"
+        app:layout_constraintBottom_toTopOf="@id/Confirmar"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Confirmar"
+        style="@style/Buttons"
+        android:text="@string/confirmar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Insert_senha"
+        />
+
+    <TextView
+        android:id="@+id/pergunta"
+        android:text="@string/pergunta_conta"
+        style="@style/Textos"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Confirmar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    
+    <TextView
+        android:id="@+id/text_cadastro"
+        style="@style/Textos"
+        android:text="@string/text_cadastro"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pergunta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
