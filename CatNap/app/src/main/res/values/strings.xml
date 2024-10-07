@@ -8,4 +8,13 @@
     <string name="email_title">Email:</string>
     <string name="email_hint">email.exemplo@dominio.com</string>
     <string name="login_title">Login</string>
+    <string name="cadastro_title">Cadastro</string>
+    <string name="name_title">Nome:</string>
+    <string name="name_hint">Digite o seu nome</string>
+    <string name="telefone_title">Telefone:</string>
+    <string name="telefone_hint">99 99999-9999</string>
+    <string name="data_nascimento_title">Data de nascimento:</string>
+    <string name="data_nascimento_hint">DD/MM/AAAA</string>
+    <string name="senha_confirmacao">Confirme sua senha:</string>
+    <string name="login_text">Ja tem uma conta? Clique aqui!</string>
 </resources>

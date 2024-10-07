@@ -1,10 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/offwhite"
     tools:context=".FormCadastro">
 
+    <TextView
+        android:id="@+id/cadastro_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:text="@string/cadastro_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nome_title"
+        />
+
+    <TextView
+        android:id="@+id/nome_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:text="@string/name_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cadastro_title"
+        app:layout_constraintBottom_toTopOf="@id/nome_edit"
+        />
+
+    <EditText
+        android:id="@+id/nome_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:inputType="text"
+        android:hint="@string/name_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nome_title"
+        app:layout_constraintBottom_toTopOf="@id/data_nasc_title"
+        />
+
+    <TextView
+        android:id="@+id/telefone_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/telefone_title"
+        style="@style/Textos"
+        app:layout_constraintTop_toBottomOf="@id/nome_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/telefone_hint"
+        />
+
+    <TextView
+        android:id="@+id/data_nasc_title"
+        style="@style/Textos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_nascimento_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nome_edit"
+        />
+
+    <EditText
+        android:id="@+id/telefone_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/telefone_hint"
+        style="@style/Textos"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/telefone_title"
+        />
+
+    <EditText
+        android:id="@+id/data_nasc_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:inputType="date"
+        android:hint="@string/data_nascimento_hint"
+        app:layout_constraintTop_toBottomOf="@id/data_nasc_title"
+        app:layout_constraintStart_toEndOf="@id/telefone_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/email_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:text="@string/email_title"
+        app:layout_constraintTop_toBottomOf="@id/data_nasc_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/email_title"
+        />
+
+    <EditText
+        android:id="@+id/email_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_hint"
+        app:layout_constraintTop_toBottomOf="@id/email_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/senha_title"
+        />
+
+    <TextView
+        android:id="@+id/senha_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:text="@string/senha_title"
+        app:layout_constraintTop_toBottomOf="@id/email_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/senha_edit"
+    />
+
+    <EditText
+        android:id="@+id/senha_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:inputType="textPassword"
+        android:hint="@string/senha_hint"
+        app:layout_constraintTop_toBottomOf="@id/senha_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/confirma_senha_title"
+        />
+
+    <TextView
+        android:id="@+id/confirma_senha_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:text="@string/senha_confirmacao"
+        app:layout_constraintTop_toBottomOf="@id/senha_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/confirma_senha_edit"
+        />
+
+    <EditText
+        android:id="@+id/confirma_senha_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Textos"
+        android:inputType="textPassword"
+        android:hint="@string/senha_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirma_senha_title"
+        app:layout_constraintBottom_toTopOf="@id/confirma_button"
+    />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/confirma_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Buttons"
+        android:text="@string/confirmar"
+        app:layout_constraintTop_toBottomOf="@id/confirma_senha_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/texto_login"
+        />
+
+    <TextView
+        android:id="@+id/texto_login"
+        style="@style/Textos"
+        android:text="@string/login_text"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirma_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
