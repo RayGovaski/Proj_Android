@@ -22,20 +22,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a55f188-6fae-4e56-a4f1-fa257ee8c474" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/migrations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/catnap/FormCadastro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/catnap/FormCadastro.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_form_cadastro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_form_cadastro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/catnap/FormLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/catnap/FormLogin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +46,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2n5FEWAcVg00ebfi8SIWeTHkHj2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,7 +64,7 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/juans/OneDrive/Documentos/GitHub/Proj_Android/CatNap"
+    "last_opened_file_path": "C:/Users/juans/OneDrive/Documentos/GitHub/Proj_Android/CatNap/app"
   },
   "keyToStringList": {
     "kotlin-gradle-user-dirs": [
@@ -81,6 +73,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juans\OneDrive\Documentos\GitHub\Proj_Android\CatNap\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\juans\OneDrive\Documentos\GitHub\Proj_Android\CatNap\app" />
     </key>

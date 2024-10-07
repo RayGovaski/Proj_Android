@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1072313266192",
+    "project_id": "catnap-ae339",
+    "storage_bucket": "catnap-ae339.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072313266192:android:fa8c18edac8588667a1a95",
+        "android_client_info": {
+          "package_name": "com.example.catnap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD98jtQJZn4G5G3eUrHoe2_dbSwd4cjUTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
