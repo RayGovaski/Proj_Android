@@ -58,7 +58,7 @@
         style="@style/Textos"
         app:layout_constraintTop_toBottomOf="@id/nome_edit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/telefone_hint"
+        app:layout_constraintBottom_toTopOf="@id/telefone_edit"
         />
 
     <TextView
@@ -72,7 +72,7 @@
         />
 
     <EditText
-        android:id="@+id/telefone_hint"
+        android:id="@+id/telefone_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/telefone_hint"
@@ -83,14 +83,14 @@
         />
 
     <EditText
-        android:id="@+id/data_nasc_hint"
+        android:id="@+id/data_nasc_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Textos"
         android:inputType="date"
         android:hint="@string/data_nascimento_hint"
         app:layout_constraintTop_toBottomOf="@id/data_nasc_title"
-        app:layout_constraintStart_toEndOf="@id/telefone_hint"
+        app:layout_constraintStart_toEndOf="@id/telefone_edit"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         style="@style/Textos"
         android:text="@string/email_title"
-        app:layout_constraintTop_toBottomOf="@id/data_nasc_hint"
+        app:layout_constraintTop_toBottomOf="@id/data_nasc_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/email_title"
