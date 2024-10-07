@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Campo para inserir o valor a ser pago -->
+    <EditText
+        android:id="@+id/valor_pagamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor a ser pago"
+        android:inputType="numberDecimal" />
+
+    <!-- Botão para iniciar o pagamento -->
+    <Button
+        android:id="@+id/btn_pagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar via PIX" />
+
+    <!-- ImageView para exibir o QR Code do PIX -->
+    <ImageView
+        android:id="@+id/qrcode_pix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>
