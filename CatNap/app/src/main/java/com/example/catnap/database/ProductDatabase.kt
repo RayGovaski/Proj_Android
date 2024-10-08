@@ -1,8 +1,19 @@
 package com.example.catnap.database
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import com.example.catnap.R
+import com.example.catnap.database.UserDatabase.Companion.COLUMN_BIRTHDATE
+import com.example.catnap.database.UserDatabase.Companion.COLUMN_EMAIL
+import com.example.catnap.database.UserDatabase.Companion.COLUMN_NAME
+import com.example.catnap.database.UserDatabase.Companion.COLUMN_PASSWORD
+import com.example.catnap.database.UserDatabase.Companion.COLUMN_PHONE
+import com.example.catnap.database.UserDatabase.Companion.TABLE_NAME
+import java.io.ByteArrayOutputStream
 
 class ProductDatabase(
     context: Context
@@ -27,7 +38,7 @@ class ProductDatabase(
                 $COLUMN_PRODUCT_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 $COLUMN_PRODUCT_NAME TEXT NOT NULL,
                 $COLUMN_PRODUCT_DESC TEXT NOT NULL,
-                $COLUMN_PRODUCT_PRICE REAL NOT NULL,
+                $COLUMN_PRODUCT_PRICE TEXT NOT NULL,
                 $COLUMN_PRODUCT_PHOTO BLOB
             )
         """
@@ -39,4 +50,17 @@ class ProductDatabase(
         db.execSQL("DROP TABLE IF EXISTS $TABLE_PRODUCTS")
         onCreate(db)
     }
+
+    fun insertProduct(name: String, description: String, price: String): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put(COLUMN_PRODUCT_NAME, name)
+            put(COLUMN_PRODUCT_DESC, description)
+            put(COLUMN_PRODUCT_PRICE, price)
+        }
+
+        val result = db.insert(TABLE_PRODUCTS, null, contentValues)
+        return result != -1L
+    }
+
 }

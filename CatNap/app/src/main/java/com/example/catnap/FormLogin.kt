@@ -10,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.catnap.database.ProductDatabase
 import com.example.catnap.database.UserDatabase
 
 class FormLogin : AppCompatActivity() {
 
     private lateinit var text_tela_cadastro: TextView
     private lateinit var dbHelper: UserDatabase
+    private lateinit var dbHelper2: ProductDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,7 @@ class FormLogin : AppCompatActivity() {
         val button_login = findViewById<AppCompatButton>(R.id.Confirmar)
 
         dbHelper = UserDatabase(this)
+        dbHelper2 = ProductDatabase(this)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -45,7 +48,8 @@ class FormLogin : AppCompatActivity() {
 
                 if (isValidUser) {
                     Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-                    val intent2 = Intent(this@FormLogin, Pesquisa::class.java) // Mudar para a página inicial Pesquisa
+                    val insert_product = dbHelper2.insertProduct("teste", "teste", "teste")
+                    val intent2 = Intent(this@FormLogin, Pesquisa::class.java)
                     startActivity(intent2)
                     finish()
                 } else {

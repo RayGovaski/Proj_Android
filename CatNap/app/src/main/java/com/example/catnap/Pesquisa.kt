@@ -23,14 +23,13 @@ class Pesquisa : AppCompatActivity() {
     private lateinit var adapter: ProductAdapter // Corrigir o tipo aqui
     private lateinit var productList: MutableList<Product>
     private lateinit var filteredList: MutableList<Product>
-    private lateinit var dbHelper: UserDatabase
+    private lateinit var dbHelper: ProductDatabase
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_pesquisa)
 
-        dbHelper = UserDatabase(this)
+        dbHelper = ProductDatabase(this)
 
         val searchEditText = findViewById<EditText>(R.id.EditText)
 
@@ -63,8 +62,6 @@ class Pesquisa : AppCompatActivity() {
         })
     }
 
-    // Função para carregar os produtos do banco de dados
-    @SuppressLint("Range")
     private fun loadProductsFromDB(): MutableList<Product> {
         val productList = mutableListOf<Product>()
         val db = dbHelper.readableDatabase
@@ -74,10 +71,10 @@ class Pesquisa : AppCompatActivity() {
 
         if (cursor.moveToFirst()) {
             do {
-                val name = cursor.getString(cursor.getColumnIndex(ProductDatabase.COLUMN_PRODUCT_NAME))
-                val descricao = cursor.getString(cursor.getColumnIndex(ProductDatabase.COLUMN_PRODUCT_DESC))
-                val preco = cursor.getDouble(cursor.getColumnIndex(ProductDatabase.COLUMN_PRODUCT_PRICE)).toString()
-                val imageResId = R.drawable.produto1 // Para simplificar, usar imagem padrão
+                val name = cursor.getString(cursor.getColumnIndexOrThrow(ProductDatabase.COLUMN_PRODUCT_NAME))
+                val descricao = cursor.getString(cursor.getColumnIndexOrThrow(ProductDatabase.COLUMN_PRODUCT_DESC))
+                val preco = cursor.getDouble(cursor.getColumnIndexOrThrow(ProductDatabase.COLUMN_PRODUCT_PRICE)).toString()
+                val imageResId = R.drawable.produto1
 
                 productList.add(Product(name, imageResId, descricao, preco))
             } while (cursor.moveToNext())
