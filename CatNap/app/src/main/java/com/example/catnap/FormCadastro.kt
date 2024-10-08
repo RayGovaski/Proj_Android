@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.catnap.database.UserDatabase
@@ -41,9 +42,29 @@ class FormCadastro : AppCompatActivity() {
         cadastrar_user.setOnClickListener {
 
             val userName = nome.text.toString()
+            val userPhone = telefone.text.toString()
+            val userBirthdate = data_nasc.text.toString()
+            val userEmail = email.text.toString()
+            val userPassword = senha.text.toString()
 
-            val intent = Intent(this@FormCadastro, FormLogin::class.java)
-            startActivity(intent)
+            if (userName.isNotEmpty() && userPhone.isNotEmpty() && userBirthdate.isNotEmpty()
+                && userEmail.isNotEmpty() && userPassword.isNotEmpty()) {
+
+                val insertResult = dbHelper.insertUser(userName, userPhone, userBirthdate, userEmail, userPassword)
+
+                // Verificando se a inserção foi bem-sucedida
+                if (insertResult) {
+                    Toast.makeText(this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@FormCadastro, FormLogin::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Erro ao cadastrar o usuário!", Toast.LENGTH_SHORT).show()
+                }
+
+            } else {
+                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         text_tela_login.setOnClickListener {
@@ -55,25 +76,7 @@ class FormCadastro : AppCompatActivity() {
 
     private fun IniciarComponentes() {
         text_tela_login = findViewById<TextView>(R.id.texto_login)
-        cadastrar_user = findViewById<Button>(R.id.confirma_button)
-        nome = findViewById<EditText>(R.id.nome_edit)
-        telefone = findViewById<EditText>(R.id.telefone_edit)
-        data_nasc = findViewById<EditText>(R.id.data_nasc_edit)
-        email = findViewById<EditText>(R.id.email_edit)
-        senha = findViewById<EditText>(R.id.senha_edit)
-    }
-
-    private fun cadastrarUsuario(){
-        val insertResult = dbHelper.insertUser(
-            nome = "text"
-        )
-
-        if (insertResult) {
-            Toast.makeText(this, "Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "Erro ao inserir usuário!", Toast.LENGTH_SHORT).show()
-        }
-
+        cadastrar_user = findViewById<AppCompatButton>(R.id.confirma_button)
     }
 
 }

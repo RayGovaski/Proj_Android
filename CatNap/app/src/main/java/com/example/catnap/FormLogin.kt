@@ -2,17 +2,28 @@ package com.example.catnap
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.catnap.database.UserDatabase
 
 class FormLogin : AppCompatActivity() {
 
     private lateinit var text_tela_cadastro: TextView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        lateinit var dbHelper: UserDatabase;
+
+        val login_email = findViewById<EditText>(R.id.Insert_email)
+        val login_senha = findViewById<EditText>(R.id.Insert_senha)
+        val button_login = findViewById<AppCompatButton>(R.id.Confirmar)
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_form_login)
@@ -23,6 +34,26 @@ class FormLogin : AppCompatActivity() {
         }
         
         IniciarComponentes()
+
+        button_login.setOnClickListener {
+
+            val email = login_email.text.toString()
+            val password = login_senha.text.toString()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                val isValidUser = dbHelper.checkUser(email, password)
+
+                if (isValidUser) {
+                    Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@FormLogin, FormCadastro::class.java) //mudar para pagina inicial
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Email ou senha incorretos!", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         text_tela_cadastro.setOnClickListener {
             val intent = Intent(this@FormLogin, FormCadastro::class.java)

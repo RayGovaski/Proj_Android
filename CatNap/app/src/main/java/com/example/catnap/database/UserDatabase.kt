@@ -63,6 +63,16 @@ class UserDatabase (
         return db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL = ?", arrayOf(email))
     }
 
+    fun checkUser(email: String, password: String): Boolean {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL = ? AND $COLUMN_PASSWORD = ?"
+        val cursor = db.rawQuery(query, arrayOf(email, password))
+
+        val exists = cursor.count > 0
+        cursor.close()
+        return exists
+    }
+
     fun updateUser(id: String, name: String, phone: String, birthdate: String, email: String, password: String): Boolean {
         val db = this.writableDatabase
         val contentValues = ContentValues().apply {
