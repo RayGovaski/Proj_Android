@@ -55,8 +55,8 @@ class FormCadastro : AppCompatActivity() {
                 // Verificando se a inserção foi bem-sucedida
                 if (insertResult) {
                     Toast.makeText(this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@FormCadastro, FormLogin::class.java)
-                    startActivity(intent)
+                    //val intent = Intent(this@FormCadastro, FormLogin::class.java)
+                    //startActivity(intent)
                 } else {
                     Toast.makeText(this, "Erro ao cadastrar o usuário!", Toast.LENGTH_SHORT).show()
                 }

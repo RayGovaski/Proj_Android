@@ -19,8 +19,15 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".Pesquisa"
+            android:exported="false" />
+        <activity
+            android:name=".PagamentoActivity"
+            android:exported="false" />
+        <activity
             android:name=".FormLogin"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
