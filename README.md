@@ -2,9 +2,12 @@
 
 **Descrição do Projeto**
 
+
 Este projeto foi desenvolvido como parte da disciplina de Desenvolvimento Android, cursada no 4º período do curso de Bacharelado em Sistemas de Informação (BSI) da PUCPR. O aplicativo, chamado CatNap, é uma loja de café com uma temática única, centrada em gatinhos, oferecendo uma interface amigável e intuitiva para os usuários explorarem o cardápio, realizarem pedidos e gerenciarem suas preferências.
 
+
 **Funcionalidades**
+
 
 O CatNap possui as seguintes funcionalidades principais:
 
@@ -18,7 +21,9 @@ Sistema de Login/Autenticação: Crie uma conta ou faça login para acessar func
 
 Armazenamento de Dados: As informações dos usuários e pedidos são armazenadas utilizando SQL, garantindo persistência e segurança.
 
+
 **Tecnologias Utilizadas**
+
 
 Kotlin: Linguagem de programação usada para desenvolver o aplicativo.
 
@@ -26,7 +31,9 @@ SQLite: Banco de dados relacional embutido para armazenamento de dados localment
 
 Android Studio: IDE utilizada para o desenvolvimento do aplicativo.
 
+
 **Como Rodar o Projeto**
+
 
 1 - Clone este repositório em seu ambiente local.
 
@@ -36,7 +43,9 @@ Android Studio: IDE utilizada para o desenvolvimento do aplicativo.
 
 4 - Execute o aplicativo clicando em "Run" ou usando o atalho Shift + F10.
 
+
 **Equipe de Desenvolvimento**
+
 
 Juan Rodrigues dos Santos Servelo
 
@@ -48,8 +57,12 @@ Ray Govaski
 
 João Victor Monteiro Tancon
 
+
 **Licença**
+
 
 Este projeto foi desenvolvido exclusivamente para fins acadêmicos e não está licenciado para uso comercial.
 
-CatNap - Um café aconchegante com a doçura dos gatinhos. ☕🐾
+
+
+**CatNap - Um café aconchegante com a doçura dos gatinhos. ☕🐾**
