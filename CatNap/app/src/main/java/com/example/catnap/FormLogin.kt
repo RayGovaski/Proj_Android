@@ -22,12 +22,11 @@ class FormLogin : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_form_login)
 
-        // Agora você pode usar o findViewById após o layout ser inflado
         val login_email = findViewById<EditText>(R.id.Insert_email)
         val login_senha = findViewById<EditText>(R.id.Insert_senha)
         val button_login = findViewById<AppCompatButton>(R.id.Confirmar)
 
-        dbHelper = UserDatabase(this) // Inicialize o banco de dados
+        dbHelper = UserDatabase(this)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -46,8 +45,9 @@ class FormLogin : AppCompatActivity() {
 
                 if (isValidUser) {
                     Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@FormLogin, Pesquisa::class.java) // Mudar para a página inicial Pesquisa
-                    startActivity(intent)
+                    val intent2 = Intent(this@FormLogin, Pesquisa::class.java) // Mudar para a página inicial Pesquisa
+                    startActivity(intent2)
+                    finish()
                 } else {
                     Toast.makeText(this, "Email ou senha incorretos!", Toast.LENGTH_SHORT).show()
                 }

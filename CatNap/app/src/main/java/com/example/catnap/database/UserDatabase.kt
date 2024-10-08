@@ -14,8 +14,6 @@ class UserDatabase (
         const val DATABASE_NAME = "users.db"
         const val DATABASE_VERSION = 1
         const val TABLE_NAME = "users"
-
-        // Nomes das colunas
         const val COLUMN_ID = "id"
         const val COLUMN_NAME = "name"
         const val COLUMN_PHONE = "phone"
@@ -24,7 +22,7 @@ class UserDatabase (
         const val COLUMN_PASSWORD = "password"
     }
 
-    override fun onCreate(db: SQLiteDatabase) {
+    override fun onCreate(db: SQLiteDatabase?) {
         val createTable = ("CREATE TABLE $TABLE_NAME (" +
                 "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "$COLUMN_NAME TEXT, " +
@@ -32,11 +30,11 @@ class UserDatabase (
                 "$COLUMN_BIRTHDATE TEXT, " +
                 "$COLUMN_EMAIL TEXT, " +
                 "$COLUMN_PASSWORD TEXT)")
-        db.execSQL(createTable)
+        db?.execSQL(createTable)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
 
@@ -67,6 +65,16 @@ class UserDatabase (
         val db = this.readableDatabase
         val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL = ? AND $COLUMN_PASSWORD = ?"
         val cursor = db.rawQuery(query, arrayOf(email, password))
+
+        val exists = cursor.count > 0
+        cursor.close()
+        return exists
+    }
+
+    fun checkEmail(email: String): Boolean{
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL = ?"
+        val cursor = db.rawQuery(query, arrayOf(email))
 
         val exists = cursor.count > 0
         cursor.close()

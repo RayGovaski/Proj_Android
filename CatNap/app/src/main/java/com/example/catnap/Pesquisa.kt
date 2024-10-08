@@ -96,6 +96,5 @@ class Pesquisa : AppCompatActivity() {
                 filteredList.add(product)
             }
         }
-        adapter.notifyDataSetChanged()
     }
 }
