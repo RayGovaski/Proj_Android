@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9E3E6">
+
+
+    <TextView
+        android:id="@+id/textPerfil"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/manjari"
+        android:text="@string/perfil"
+        android:textAlignment="textStart"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nomePessoa"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/manjari"
+        android:text="Nome:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/textPerfil" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:fontFamily="@font/manjari"
+        android:hint="nome sobrenome"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textPerfil"
+        app:layout_constraintStart_toStartOf="@+id/nomePessoa"
+        app:layout_constraintTop_toBottomOf="@+id/nomePessoa"
+        tools:ignore="Autofill,TouchTargetSizeCheck" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintStart_toStartOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText">
+
+        <LinearLayout
+            android:id="@+id/telefoneLayout"
+            android:layout_width="205dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/telefoneTexto"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/manjari"
+                android:text="Telefone:"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                android:textStyle="normal|bold"
+                tools:ignore="DuplicateIds,HardcodedText" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:fontFamily="@font/manjari"
+                android:hint="(99) 99999-9999"
+                android:inputType="phone"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nascimento"
+            android:layout_width="258dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dataNas"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/manjari"
+                android:text="@string/data_de_nasciemento"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:fontFamily="@font/manjari"
+                android:hint="01/01/2000"
+                android:inputType="date"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="25dp"
+        android:background="#006F0404"
+        android:fontFamily="@font/manjari"
+        android:text="@string/email"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:fontFamily="@font/manjari"
+        android:hint="exemplo@email.com"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="55dp"
+        android:background="#565454"
+        android:fontFamily="@font/manjari"
+        android:text="Editar"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

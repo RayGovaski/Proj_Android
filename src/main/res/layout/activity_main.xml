@@ -1,0 +1,388 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9E3E6"
+
+    tools:context=".MainActivity">
+    <!-- Texto Principal -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="100dp"
+        android:fontFamily="@font/julius_sans_one"
+        android:text="NAP CAT CAFE"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Campo de Pesquisa -->
+
+            <EditText
+                android:id="@+id/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/rounded_border"
+                android:ems="10"
+                android:fontFamily="@font/manjari"
+                android:inputType="text"
+                android:padding="5dp"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.062"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:text="Pesquisa" />
+            <!-- Logo da Cafeteria -->
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="79dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
+            <!-- RecyclerView (Galeria de Produtos) -->
+            <!-- Botão de Ação -->
+
+            <LinearLayout
+                android:id="@+id/LayoutProdDisponivel"
+                android:layout_width="0dp"
+                android:layout_height="235dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/disponiveis"
+                app:layout_constraintStart_toStartOf="@+id/disponiveis"
+                app:layout_constraintTop_toBottomOf="@+id/disponiveis">
+
+                <LinearLayout
+                    android:id="@+id/produtoExpresso"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_border"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/LayoutCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imagemExpresso"
+                            android:layout_width="match_parent"
+                            android:layout_height="98dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@drawable/produto2" />
+
+                        <TextView
+                            android:id="@+id/name_expresso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/manjari"
+                            android:gravity="center"
+                            android:text="Expresso"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/product_preco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:text="@string/r_000_00"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="63dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:background="@drawable/rounded_border_button"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15dp"
+                                tools:ignore="TouchTargetSizeCheck,TextSizeCheck,TextContrastCheck" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/segundo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_border"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/product_image1"
+                            android:layout_width="match_parent"
+                            android:layout_height="98dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/todo"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_launcher_foreground"
+                            tools:ignore="ImageContrastCheck"
+                            tools:srcCompat="@drawable/limitada" />
+
+                        <TextView
+                            android:id="@+id/product_name1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/manjari"
+                            android:gravity="center"
+                            android:text="Black Coffe"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/product_preco1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:text="@string/r_000_00"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/buttonOLAAAA"
+                                android:layout_width="57dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:background="@drawable/rounded_border_button"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15dp"
+                                tools:ignore="TouchTargetSizeCheck,TextSizeCheck,TextContrastCheck" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/disponiveis"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/EditText"
+                app:layout_constraintHorizontal_bias="0.013"
+                app:layout_constraintStart_toStartOf="@+id/EditText"
+                app:layout_constraintTop_toBottomOf="@+id/EditText">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/manjari"
+                    android:text="Disponíveis:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="118dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#00F4F4F4"
+                    android:fontFamily="@font/manjari"
+                    android:text="ver tudo >>"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#090000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    android:visibility="visible"
+                    app:rippleColor="#FFFEFE"
+                    tools:ignore="TouchTargetSizeCheck"
+                    tools:text="ver tudo >>" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cardProduto"
+                android:layout_width="0dp"
+                android:layout_height="290dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_border"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/lineTextLimittadas"
+                app:layout_constraintStart_toStartOf="@+id/lineTextLimittadas"
+                app:layout_constraintTop_toBottomOf="@+id/lineTextLimittadas">
+
+                <LinearLayout
+                    android:id="@+id/itensCarrinhoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/cardProduto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/produto_imagem"
+                    android:layout_width="match_parent"
+                    android:layout_height="156dp"
+                    app:srcCompat="@drawable/produto1" />
+
+                <TextView
+                    android:id="@+id/produto_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/manjari"
+                    android:text="Sakura Blossom"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/produto_preco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/manjari"
+                    android:text="R$20,00"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/botao_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginRight="75dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_border_button"
+                    android:backgroundTint="#00FFFFFF"
+                    android:fontFamily="@font/manjari"
+                    android:text="@string/adicionar"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineTextLimittadas"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="#00FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/LayoutProdDisponivel"
+        app:layout_constraintStart_toStartOf="@+id/LayoutProdDisponivel"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutProdDisponivel">
+
+        <TextView
+            android:id="@+id/textLimitdas"
+            android:layout_width="257dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/manjari"
+            android:text="Edições Limitadas:"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonverLimitadas"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:text="ver tudo >>"
+            android:textAlignment="viewStart"
+            android:textColor="#020000"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+                <FrameLayout
+                    android:id="@+id/nav_host_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/bottom_navigation"/>
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    app:menu="@menu/bottom_nav_menu"/>
+
+            </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
