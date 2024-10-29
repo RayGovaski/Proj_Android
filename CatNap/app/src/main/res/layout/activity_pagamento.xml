@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -10,20 +11,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Valor a ser pago"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:visibility="gone" />
 
     <!-- Botão para iniciar o pagamento -->
     <Button
         android:id="@+id/btn_pagar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pagar via PIX" />
+        android:text="Pagar via PIX"
+        android:visibility="gone" />
 
     <!-- ImageView para exibir o QR Code do PIX -->
     <ImageView
         android:id="@+id/qrcode_pix"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/qr"/>
 
 </LinearLayout>
